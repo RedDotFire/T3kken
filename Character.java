@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Character{
 	private String name;
@@ -31,6 +32,19 @@ public class Character{
 		System.out.println(name + " Missade. Klang");
 		return 0;
 	}
+	public void saveCharacter(){
+		String filnamn = "Saves/charsave.txt";
+		String resultat = name + " " + hp + " " + hitChance + " " + shield;
+		try{
+			FileWriter fw = new FileWriter(new File(filnamn));
+			fw.write(resultat);
+			fw.close();
+			}
+		catch(IOException e) {
+	    System.out.println("Hoppsan (" + e.toString() + ")");
+		}
+	}
+		
 	public void dies(){
 		System.out.println("Aaaaaargh");
 	}

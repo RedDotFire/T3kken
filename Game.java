@@ -27,7 +27,7 @@ private static Character setUpCharacter(String mvh){
 		int damageMax = Keyboard.readInt();
 		return new Weapon(typ, damageMin, damageMax);
 	}
-
+	
 private static boolean fajt(Character a, Character b){
 	int dam = a.hit();
 	b.setHp(b.getHp() - dam);
